@@ -1,19 +1,42 @@
-<!DOCTYPE html>
+<!doctype html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head>
-<meta charset="UTF-8">
-<title>상품 등록</title>
-</head>
-<body>
-<h2>상품 등록</h2>
-<form action="insert" method="post" enctype="multipart/form-data">
-	<p>상품명:<input type="text" name="name"></p>
-	<p>가격:<input type="number" name="price"></p>
-	<p>수량:<input type="number" name="amount"></p> 
-	<p>상품이미지:<input type="file" name="file"></p> 
-	<hr>
-	<button type="submit">등록</button>
-	<a th:href="@{/product/list}">목록으로</a>
-</form>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <title>상품 등록</title>
+    <link rel="stylesheet" th:href="@{/css/product-write.css}" />
+  </head>
+  <body>
+    <div class="wrap">
+      <h2>상품 등록</h2>
+
+      <form action="insert" method="post" enctype="multipart/form-data">
+        <div class="form-row">
+          <label>상품명</label>
+          <input type="text" name="name" />
+        </div>
+
+        <div class="form-row">
+          <label>가격</label>
+          <input type="number" name="price" />
+        </div>
+
+        <div class="form-row">
+          <label>수량</label>
+          <input type="number" name="amount" />
+        </div>
+
+        <div class="form-row">
+          <label>상품이미지</label>
+          <input type="file" name="file" />
+        </div>
+
+        <hr />
+
+        <div class="button-row">
+          <button type="submit">등록</button>
+          <a th:href="@{/product/list}">목록으로</a>
+        </div>
+      </form>
+    </div>
+  </body>
 </html>
